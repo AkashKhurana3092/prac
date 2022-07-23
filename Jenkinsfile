@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	options {
+        timeout(time: 10, unit: 'SECONDS') 
+    }
 	stages {
 		stage('Delete the workspace') {
 			steps {
@@ -9,6 +12,7 @@ pipeline {
 		stage('Second Stage') {
 			steps {
 				echo "Second Stage"
+				sleep 300
 			}
 		}
 	        stage('Third Stage') {
