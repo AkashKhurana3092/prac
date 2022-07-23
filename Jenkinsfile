@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent { label "agentfarm" }
 	options {
         timeout(time: 10, unit: 'SECONDS') 
     }
@@ -7,13 +7,11 @@ pipeline {
 		stage('Delete the workspace') {
 			steps {
 				cleanWs()
-				sleep 5
 			}
 		}
 		stage('Second Stage') {
 			steps {
 				echo "Second Stage"
-				sleep 6
 			}
 		}
 	        stage('Third Stage') {
