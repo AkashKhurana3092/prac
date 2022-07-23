@@ -7,12 +7,13 @@ pipeline {
 		stage('Delete the workspace') {
 			steps {
 				cleanWs()
+				sleep 5
 			}
 		}
 		stage('Second Stage') {
 			steps {
 				echo "Second Stage"
-				sleep 300
+				sleep 6
 			}
 		}
 	        stage('Third Stage') {
