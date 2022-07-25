@@ -20,9 +20,9 @@ pipeline {
 					}
 			}
 		}
-	        stage('Third Stage') {
+	        stage('Download Cookbook') {
                         steps {
-                                echo "Third Stage"
+                                git branch: 'main', credentialsId: 'git-repo-creds', url: 'https://github.com/AkashKhurana3092/prac.git'
                         }
                 }
 	}
