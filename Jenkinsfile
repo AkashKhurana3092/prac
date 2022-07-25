@@ -1,8 +1,5 @@
 pipeline {
 	agent any
-#	options {
-#        timeout(time: 10, unit: 'SECONDS') 
-#    }
 	stages {
 		stage('Delete the workspace') {
 			steps {
