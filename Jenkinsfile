@@ -24,12 +24,12 @@ pipeline {
                         steps {
                                 git branch: 'main', credentialsId: 'git-repo-creds', url: 'https://github.com/AkashKhurana3092/prac.git'
                         }
+		}
 		stage('Install Kitchen Docker Gem') {
 			steps {
 				sh 'sudo apt-get install -y make gcc'
 				sh 'sudo chef gem install kitchen-docker'
 				}
 			}
-                }
 	}
 }
