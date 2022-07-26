@@ -76,10 +76,10 @@ pipeline {
 	}
 		post {
 			success {
-				slackSend channel: 'jenkins-notification', color: 'success', message: 'Build Success', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkin    s'
+				slackSend channel: 'jenkins-notification', color: 'warning', message: 'Build Success', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkin    s'
 				}
 			failure {
-				slackSend channel: 'jenkins-notification', color: 'failure', message: 'Build Failed', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkin    s'
+				slackSend channel: 'jenkins-notification', color: 'warning', message: 'Build Failed', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkin    s'
 				}
 			}
 }
