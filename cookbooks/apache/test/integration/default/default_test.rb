@@ -6,3 +6,7 @@
 describe package('telnet') do
   it { should be_installed }
 end
+
+describe package('httpd') do
+  it { should be_installed }
+end
