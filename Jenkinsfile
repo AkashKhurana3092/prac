@@ -52,7 +52,7 @@ pipeline {
                                 sh 'cd cookbooks/apache/;sudo kitchen verify'
                                 }
                         }
-		stage('Run Kitchen Destroy') {
+		stage('Kitchen Destroy') {
                         steps {
                                 sh 'cd cookbooks/apache/;sudo kitchen destroy'
                                 }
