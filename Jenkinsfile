@@ -32,5 +32,11 @@ pipeline {
 				sh 'pwd'
 				}
 			}
+                stage('Run Kitchen Destroy') {
+                        steps {
+                                sh 'sudo cd cookbooks/apache/'
+                                sh 'sudo kitchen list'
+                                }
+                        }
 	}
 }
