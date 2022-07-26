@@ -65,6 +65,7 @@ pipeline {
 		stage('Run Kitchen List') {
                         steps {
                                 sh 'cd cookbooks/apache/;sudo kitchen list'
+				input 'Approve or Deny'
                                 }
                         }
 		stage('Slack Notification') {
