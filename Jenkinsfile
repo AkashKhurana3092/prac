@@ -34,6 +34,31 @@ pipeline {
 			}
                 stage('Run Kitchen Destroy') {
                         steps {
+                                sh 'cd cookbooks/apache/;sudo kitchen destroy'
+                                }
+                        }
+		stage('Run Kitchen Create') {
+                        steps {
+                                sh 'cd cookbooks/apache/;sudo kitchen create'
+                                }
+                        }
+		stage('Run Kitchen Converge') {
+                        steps {
+                                sh 'cd cookbooks/apache/;sudo kitchen converge'
+                                }
+                        }
+		stage('Run Kitchen Verify) {
+                        steps {
+                                sh 'cd cookbooks/apache/;sudo kitchen verify'
+                                }
+                        }
+		stage('Run Kitchen Destroy') {
+                        steps {
+                                sh 'cd cookbooks/apache/;sudo kitchen destroy'
+                                }
+                        }
+		stage('Run Kitchen List') {
+                        steps {
                                 sh 'cd cookbooks/apache/;sudo kitchen list'
                                 }
                         }
