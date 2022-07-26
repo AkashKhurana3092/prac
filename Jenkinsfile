@@ -70,8 +70,15 @@ pipeline {
                         }
 		stage('Slack Notification') {
                         steps {
-                                slackSend channel: 'jenkins-notification', color: 'warning', message: 'Kitchen Test Completed Succesfully.', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
+                                slackSend channel: 'jenkins-notification', color: 'warning', message: 'Post Build Notification Sent', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
                                 }
                         }
 	}
+	post {
+		success {
+				slackSend channel: 'jenkins-notification', color: 'success', message: 'Kitchen Test Completed Succesfully.', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
+		} failure {
+				slackSend channel: 'jenkins-notification', color: 'failure', message: 'Kitchen Test Failed.', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
+		}
+	
 }
