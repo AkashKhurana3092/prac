@@ -67,5 +67,10 @@ pipeline {
                                 sh 'cd cookbooks/apache/;sudo kitchen list'
                                 }
                         }
+		stage('Slack Notification') {
+                        steps {
+                                slackSend channel: 'jenkins-notification', color: 'warning', message: 'Kitchen Test Completed Succesfully.', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
+                                }
+                        }
 	}
 }
