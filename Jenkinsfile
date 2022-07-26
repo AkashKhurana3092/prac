@@ -81,4 +81,5 @@ pipeline {
 				slackSend channel: 'jenkins-notification', color: 'failure', message: 'Kitchen Test Failed.', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
 		}
 	
+	}
 }
