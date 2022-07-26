@@ -47,7 +47,7 @@ pipeline {
                                 sh 'cd cookbooks/apache/;sudo kitchen converge'
                                 }
                         }
-		stage('Run Kitchen Verify) {
+		stage('Run Kitchen Verify') {
                         steps {
                                 sh 'cd cookbooks/apache/;sudo kitchen verify'
                                 }
