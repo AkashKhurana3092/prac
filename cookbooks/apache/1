@@ -1,8 +1,0 @@
-# Chef InSpec test for recipe apache::default
-
-# The Chef InSpec reference, with examples and extensive documentation, can be
-# found at https://docs.chef.io/inspec/resources/
-
-describe package('telnet')
-  it { should be_installed }
-end
