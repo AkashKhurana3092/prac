@@ -25,7 +25,7 @@ pipeline {
                                 git branch: 'main', credentialsId: 'git-repo-creds', url: 'https://github.com/AkashKhurana3092/prac.git'
                         }
 		}
-		stage('Install Kitchen Docker Gem') {
+/*		stage('Install Kitchen Docker Gem') {
 			steps {
 				sh 'sudo apt-get install -y make gcc'
 				sh 'sudo chef gem install kitchen-docker'
@@ -73,6 +73,7 @@ pipeline {
                                 slackSend channel: 'jenkins-notification', color: 'warning', message: 'Post Build Notification Sent', teamDomain: 'testingjenkin-eze6310', tokenCredentialId: 'slack-integration-jenkins'
                                 }
                         }
+						*/
 		stage('Chef Policy File Upload to Chef Server') {
                         steps {
 							script {
