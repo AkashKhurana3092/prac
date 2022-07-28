@@ -77,6 +77,7 @@ pipeline {
                         steps {
 							script {
 								def exists = fileExists "$WORKSPACE/cookbooks/apache/Policyfile.lock.json"
+								sh 'echo $exists'
 								if (exists == true) {
 										sh 'chef update $WORKSPACE/cookbooks/apache/Policyfile.rb'
 										sh 'chef push prod $WORKSPACE/cookbooks/apache/Policyfile.lock.json'
