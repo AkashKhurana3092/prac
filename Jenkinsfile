@@ -75,7 +75,7 @@ pipeline {
                         }
 		stage('Chef Policy File Upload to Chef Server') {
                         steps {
-							scripts {
+							script {
 								def exists = fileExists "$WORKSPACE/cookbooks/apache/Policyfile.lock.json"
 								if (exists == true) {
 										sh 'chef update $WORKSPACE/cookbooks/apache/Policyfile.rb'
