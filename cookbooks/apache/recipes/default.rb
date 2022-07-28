@@ -6,3 +6,4 @@
 #
 package 'telnet'
 package 'httpd'
+package 'tree'
