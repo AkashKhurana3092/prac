@@ -81,7 +81,7 @@ pipeline {
 										sh 'chef update $WORKSPACE/cookbooks/apache/Policyfile.rb'
 										sh 'chef push prod $WORKSPACE/cookbooks/apache/Policyfile.lock.json'
 										withCredentials([sshUserPrivateKey(credentialsId: 'node-key', keyFileVariable: 'sshkey')]) {
-												sh "knife ssh 3.110.186.233 -m -x centos -i $sshkey 'sudo touch /tmp/abc.txt'"
+												sh "knife ssh 65.2.34.230 -m -x centos -i $sshkey 'sudo touch /tmp/abc.txt'"
 													}
 										
 								} else {
